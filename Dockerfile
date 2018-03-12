@@ -2,8 +2,8 @@ FROM vahankh/ubuntu-lamp
 MAINTAINER Vahan K 
 
 RUN \
-  wget http://packages.couchbase.com/releases/couchbase-release/couchbase-release-1.0-2-amd64.deb && \
-  dpkg -i couchbase-release-1.0-2-amd64.deb && \
+  wget http://packages.couchbase.com/releases/couchbase-release/couchbase-release-1.0-4-amd64.deb && \ 
+  dpkg -i couchbase-release-1.0-4-amd64.deb && \ 
   apt-get update && \
   apt-get install -y libcouchbase-dev zlib1g-dev && \
   pecl install pcs-1.3.3 # since couchbase-2.2.4
