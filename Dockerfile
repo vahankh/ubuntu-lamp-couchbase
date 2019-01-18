@@ -10,6 +10,12 @@ RUN \
 
 RUN pecl install couchbase
 
+RUN \
+  apt-get install -y gcc make autoconf libc-dev pkg-config && \
+  apt-get install -y libssl-dev && \
+  apt-get install -y librabbitmq-dev && \
+  printf "\n" | pecl install amqp
+
 
 COPY 30-pcs.ini /etc/php/7.0/cli/conf.d/
 COPY 30-pcs.ini /etc/php/7.0/fpm/conf.d/
@@ -17,5 +23,9 @@ COPY 30-pcs.ini /etc/php/7.0/apache2/conf.d/
 COPY 30-couchbase.ini /etc/php/7.0/cli/conf.d/
 COPY 30-couchbase.ini /etc/php/7.0/fpm/conf.d/
 COPY 30-couchbase.ini /etc/php/7.0/apache2/conf.d/
+COPY 30-ampq.ini /etc/php/7.0/cli/conf.d/
+COPY 30-ampq.ini /etc/php/7.0/fpm/conf.d/
+COPY 30-ampq.ini /etc/php/7.0/apache2/conf.d/
+
 
 
