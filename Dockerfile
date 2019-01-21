@@ -14,7 +14,7 @@ RUN \
   apt-get install -y gcc make autoconf libc-dev pkg-config && \
   apt-get install -y libssl-dev && \
   apt-get install -y librabbitmq-dev && \
-  apt-get install -y php7.0-mbstring && \
+  apt-get install -y php7.0-mbstring php7.0-bcmath && \
   printf "\n" | pecl install amqp
 
 
